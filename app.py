@@ -88,38 +88,55 @@ def isValueMissing():
         return True
     return False
 
+frame = Frame(top, relief=RAISED, borderwidth=3, bg=bg_c1)
+frame.pack(fill=BOTH, expand=True)
 
-warning_label = Label(top, textvariable=warning_val, bg=bg_c1, fg="coral").pack()
+warning_label = Label(frame, textvariable=warning_val, bg=bg_c1, fg="coral").pack()
 
-Label(top, text="Steinhöhe", bg=bg_c1, fg=fg_c1).pack()
-stone_height = Entry(top, bg=bg_c2, fg=fg_c2)
-stone_height.pack()
+sub_frame1 = Frame(frame, bg=bg_c1)
+sub_frame1.pack(fill=X)
 
-Label(top, text="Steinlänge", bg=bg_c1, fg=fg_c1).pack()
-stone_length = Entry(top, bg=bg_c2, fg=fg_c2)
-stone_length.pack()
+Label(sub_frame1, text="Steinhöhe", bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+stone_height = Entry(sub_frame1, bg=bg_c2, fg=fg_c2)
+stone_height.pack(side=LEFT)
 
-Label(top, text="Steinbreite", bg=bg_c1, fg=fg_c1).pack()
-stone_width = Entry(top, bg=bg_c2, fg=fg_c2)
-stone_width.pack()
+stone_length = Entry(sub_frame1, bg=bg_c2, fg=fg_c2)
+stone_length.pack(side=RIGHT)
+Label(sub_frame1, text="Steinlänge", bg=bg_c1, fg=fg_c1).pack(side=RIGHT, padx=5)
 
-Label(top, text="Lagerfuge in cm: ", bg=bg_c1, fg=fg_c1).pack()
-Label(top, text=bearing_joint_val, bg=bg_c1, fg=fg_c1).pack()
+sub_frame2 = Frame(frame, bg=bg_c1)
+sub_frame2.pack(fill=X)
 
-Label(top, text="Stoßfuge in cm: ", bg=bg_c1, fg=fg_c1).pack()
-Label(top, text=butt_joint_val, bg=bg_c1, fg=fg_c1).pack()
+Label(sub_frame2, text="Steinbreite", bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+stone_width = Entry(sub_frame2, bg=bg_c2, fg=fg_c2)
+stone_width.pack(side=LEFT)
 
-Label(top, text="Mauerhöhe in cm", bg=bg_c1, fg=fg_c1).pack()
-wall_height = Entry(top, bg=bg_c2, fg=fg_c2)
-wall_height.pack()
+sub_frame3 = Frame(frame, bg=bg_c1)
+sub_frame3.pack(fill=X)
 
-Label(top, text="Mauerlänge in cm", bg=bg_c1, fg=fg_c1).pack()
-wall_length = Entry(top, bg=bg_c2, fg=fg_c2)
-wall_length.pack()
+Label(sub_frame3, text="Lagerfuge in cm: ", bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+Label(sub_frame3, text=bearing_joint_val, bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
 
-Label(top, text="Mauerbreite in Steinen", bg=bg_c1, fg=fg_c1).pack()
-wall_width = Entry(top, bg=bg_c2, fg=fg_c2)
-wall_width.pack()
+Label(sub_frame3, text="Stoßfuge in cm: ", bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+Label(sub_frame3, text=butt_joint_val, bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+
+sub_frame4 = Frame(frame, bg=bg_c1)
+sub_frame4.pack(fill=X)
+
+Label(sub_frame4, text="Mauerhöhe in cm", bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+wall_height = Entry(sub_frame4, bg=bg_c2, fg=fg_c2)
+wall_height.pack(side=LEFT)
+
+wall_length = Entry(sub_frame4, bg=bg_c2, fg=fg_c2)
+wall_length.pack(side=RIGHT)
+Label(sub_frame4, text="Mauerlänge in cm", bg=bg_c1, fg=fg_c1).pack(side=RIGHT, padx=5)
+
+sub_frame5 = Frame(frame, bg=bg_c1)
+sub_frame5.pack(fill=X)
+
+Label(sub_frame5, text="Mauerbreite in Steinen", bg=bg_c1, fg=fg_c1).pack(side=LEFT, padx=5)
+wall_width = Entry(sub_frame5, bg=bg_c2, fg=fg_c2)
+wall_width.pack(side=LEFT)
 
 Label(top, text="Mauerfläche in m²: ", bg=bg_c1, fg=fg_c1).pack()
 Label(top, textvariable=wall_area_val, bg=bg_c1, fg=fg_c1).pack()
